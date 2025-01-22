@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <link rel="stylesheet" href="main.css" />
+  <body>
+    <!-----------------------NAVBAR----------------------- -->
+    <nav class="navbar navbar-expand-md bg-light shadow">
+      <div
+        class="container-fluid d-flex justify-content-center align-items-center"
+      >
+        <a href="#"
+          ><img
+            class="bastonlogo"
+            src="img/logo.png"
+            alt=""
+        /></a>
+      </div>
+    </nav>
+    <!---------------------- LOG IN FORM------------------- -->
+    <div class="container mt-5 d-flex justify-content-center">
+      <div class="card p-3 rounded-3 shadow" style="width: 40rem">
+        <div class="card-title mt-3 mb-4 text-center">
+          <h2 class="fw-bold">Please fill up the Form</h2>
+        </div>
+        <div class="card-body">
+          <form class="needs-validation" method="POST" action="../login/includes/signup-inc.php" enctype="multipart/form-data" novalidate>
+            <div class="mb-3">
+              <select class="form-select" id="role" name="role">
+                <option value="">Select a Role</option>
+                <option value="player">Player</option>
+                <option value="judge">Judge</option>
+              </select>
+            </div>
+            <hr class="border border-primary border-2 opacity-50" />
+            <div id="playerInputs" style="display: none">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  name="lastname"
+                  placeholder="Last Name"
+                  required
+                />
+                <label for="lastName">Last Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Last Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  name="firstname"
+                  placeholder="First Name"
+                  required
+                />
+                <label for="firstName">First Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input First Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="middleName"
+                  name="middlename"
+                  placeholder="Middle Name"
+                  required
+                />
+                <label for="middleName">Middle Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Middle Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="input email"
+                  required
+                />
+                <label for="middleName">Email</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Email</div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="form-floating">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Birthday"
+                    aria-label="birthday"
+                    onchange="calculateAge()"
+                    id="birthday"
+                    name="birthday"
+                    required
+                  />
+                  <label for="birthday">Birthday</label>
+                </div>
+
+                <span class="input-group-text"></span>
+                <div class="form-floating">
+                  <input
+                    type="number"
+                    placeholder="Age"
+                    class="form-control"
+                    aria-label="age"
+                    id="age" 
+                    name="age"
+                    readonly
+                  />
+                  <label for="birthday">Age</label>
+                </div>
+
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input your Birthday</div>
+              </div>
+              <div class="mb-3">
+                <select
+                  id="selectGender"
+                  class="form-select form-select-md"
+                  aria-label="selectGender"
+                  name="gender"
+                  required
+                >
+                  <option selected>Gender</option>
+                  <option value="MALE">Male</option>
+                  <option value="FEMALE">Female</option>
+                </select>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Gender</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="contactNumber"
+                  name="contact_number"
+                  placeholder="Contact Number"
+                  required
+                />
+                <label for="contactNumber">Contact Number</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Last Name</div>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Height:</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="height"
+                  id="height"
+                  name="height"
+                  placeholder="Height in FT"
+                  required
+                />
+                <span class="input-group-text">Weight:</span>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="weight"
+                  id="weight"
+                  name="weight"
+                  placeholder="Weight in KG"
+                  required
+                />
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input your Birthday</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="weightClass"
+                  name="weight_class"
+                  placeholder="Weight Class"
+                  readonly
+                />
+                <label for="firstName">Weight Class</label>
+              </div>
+
+              <hr class="border border-danger border-2 opacity-50" />
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="streetName"
+                  placeholder="City: San Carlos City"
+                  readonly
+                />
+              </div>
+              <div class="mb-3">
+                <select
+                  id="selectGender"
+                  class="form-select form-select-md"
+                  aria-label="selectGender"
+                  name="barangay"
+                  required
+                >
+                <option selected>Barangay</option>
+                <option value="Brgy. Bagonbon">Bagonbon</option>
+                <option value="Brgy. Buluangan">Buluangan</option>
+                <option value="Brgy. Codcod">Codcod</option>
+                <option value="Brgy. Ermita(Sipaway)">Ermita (Sipaway)</option>
+                <option value="Brgy. Guadalupe">Guadalupe</option>
+                <option value="Brgy. Nataban">Nataban</option>
+                <option value="Brgy. Palampas">Palampas</option>
+                <option value="Brgy. 1">Barangay 1</option>
+                <option value="Brgy. 2">Barangay 2</option>
+                <option value="Brgy. 3">Barangay 3</option>
+                <option value="Brgy. 4">Barangay 4</option>
+                <option value="Brgy. 5">Barangay 5</option>
+                <option value="Brgy. 6">Barangay 6</option>
+                <option value="Brgy. Prosperidad">Prosperidad</option>
+                <option value="Brgy. Punao">Punao</option>
+                <option value="Brgy. Quezon">Quezon</option>
+                <option value="Brgy. Rizal">Rizal</option>
+                <option value="Brgy. San Juan(Sipaway)">San Juan (Sipaway)</option>
+                </select>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Barangay</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullAddress"
+                  name="street_name"
+                  placeholder="Street Name, Building, House No."
+                  required
+                />
+                <label for="fullAddress"
+                  >Street Name, Building, House No.</label
+                >
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Address</div>
+              </div>
+              <hr class="border border-primary border-2 opacity-50" />
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fathersName"
+                  name="father_name"
+                  placeholder="Fathers Name"
+                />
+                <label for="fathersName">Fathers Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Fathers Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="mothersName"
+                  name="mother_name"
+                  placeholder="Mothers Name"
+                />
+                <label for="mothersName">Mothers Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Mothers Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="legalGuardian"
+                  name="legal_guardian"
+                  placeholder="Legal Guardian"
+                  required
+                />
+                <label for="legalGuardian"
+                  >Legal Guardian that is Present</label
+                >
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Legal Guardian</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="contactNumberOfLegalGuardian"
+                  name="parentguardian_contact_number"
+                  placeholder="Mothers Name"
+                  required
+                />
+                <label for="contactNumberOfLegalGuardian"
+                  >Contact # of Legal Guardian</label
+                >
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Mothers Name</div>
+              </div>
+              <hr class="border border-danger border-2 opacity-50" />
+              <div class="mb-3">
+                <label for="formFileMultiple" class="form-label"
+                  >Upload Medical Certificate</label
+                >
+                <input
+                  class="form-control"
+                  type="file"
+                  id="formFileMultiple"
+                  name="file"
+                  multiple
+                  required
+                />
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please upload your Med Cert</div>
+              </div>
+              <div class="mb-3 form-check d-flex justify-content-center">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="terms-agreement"
+                  required
+                />
+                <label class="form-check-label" for="terms-agreement"
+                  >I have read and agree to the
+                  <a href="#">terms and conditions</a>,
+                  <a href="#">privacy policy</a>, and
+                  <a href="#">cookie policy</a>.</label
+                >
+              </div>
+              <button class="btn btn-danger">Submit Form</button>
+            </div>
+          </form>
+
+            <form class="needs-validation" method="POST" action="../login/includes/signupjudge-inc.php" enctype="multipart/form-data" novalidate>
+            <div id="judgeInputs" style="display: none">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  name="lastname"
+                  placeholder="Last Name"
+                  required
+                />
+                <label for="lastName">Last Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Last Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  name="firstname"
+                  placeholder="First Name"
+                  required
+                />
+                <label for="firstName">First Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input First Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="middleName"
+                  name="middlename"
+                  placeholder="Middle Name"
+                  required
+                />
+                <label for="middleName">Middle Name</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Middle Name</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="age"
+                  name="age"
+                  placeholder="Middle Name"
+                  required
+                />
+                <label for="middleName">Age</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Age</div>
+              </div>
+              <div class="mb-3">
+                <select
+                  id="selectGender"
+                  class="form-select form-select-md"
+                  aria-label="selectGender"
+                  name="gender"
+                  required
+                >
+                
+                  <option selected>Gender</option>
+                  <option value="MALE">Male</option>
+                  <option value="FEMALE">Female</option>
+                </select>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Gender</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="input email"
+                  required
+                />
+                <label for="middleName">Email</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Email</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="contactNumber"
+                  name="contact_number"
+                  placeholder="Contact Number"
+                  required
+                />
+                <label for="contactNumber">Contact Number</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Last Name</div>
+              </div>
+              <hr class="border border-danger border-2 opacity-50" />
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="streetName"
+                  placeholder="City: San Carlos City"
+                  readonly
+                />
+                <div class="mb-3">
+                  <select
+                    id="selectGender"
+                    class="form-select form-select-md"
+                    aria-label="selectGender"
+                    name="barangay"
+                    required
+                  >
+                <option selected>Barangay</option>
+                <option value="Brgy. Bagonbon">Bagonbon</option>
+                <option value="Brgy. Buluangan">Buluangan</option>
+                <option value="Brgy. Codcod">Codcod</option>
+                <option value="Brgy. Ermita(Sipaway)">Ermita (Sipaway)</option>
+                <option value="Brgy. Guadalupe">Guadalupe</option>
+                <option value="Brgy. Nataban">Nataban</option>
+                <option value="Brgy. Palampas">Palampas</option>
+                <option value="Brgy. 1">Barangay 1</option>
+                <option value="Brgy. 2">Barangay 2</option>
+                <option value="Brgy. 3">Barangay 3</option>
+                <option value="Brgy. 4">Barangay 4</option>
+                <option value="Brgy. 5">Barangay 5</option>
+                <option value="Brgy. 6">Barangay 6</option>
+                <option value="Brgy. Prosperidad">Prosperidad</option>
+                <option value="Brgy. Punao">Punao</option>
+                <option value="Brgy. Quezon">Quezon</option>
+                <option value="Brgy. Rizal">Rizal</option>
+                <option value="Brgy. San Juan(Sipaway)">San Juan (Sipaway)</option>
+                </select>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Barangay</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullAddress"
+                  name="street_name"
+                  placeholder="Street Name, Building, House No."
+                  required
+                />
+                <label for="fullAddress"
+                  >Street Name, Building, House No.</label
+                >
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Please input Last Name</div>
+              </div>
+              <div class="mb-3 form-check d-flex justify-content-center">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="terms-agreement"
+                  required
+                />
+                <label class="form-check-label" for="terms-agreement"
+                  >I have read and agree to the
+                  <a href="#">terms and conditions</a>,
+                  <a href="#">privacy policy</a>, and
+                  <a href="#">cookie policy</a>.</label
+                >
+              </div>
+              <button class="btn btn-danger">Submit Form</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="mt-5 mb-3 text-center">©Copyright Baston 2023</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

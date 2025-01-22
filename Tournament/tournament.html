@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labanan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="tourn.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- ------------------------------NAVBAR---------------------- --->
+    <nav class="navbar bg-body-tertiary fixed-top d-flex">
+      <div class="container-fluid d-flex justify-content-between">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="../admininterface/admin.html"
+          ><img class="bastonlogo" src="img/logo.png" alt=""
+        /></a>
+        <div></div>
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Welcome Admin
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../admininterface/admin.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+              </li>
+            </ul>
+            <a id="logOut" class="btn link btn-danger mt-5 px-5" name="logout"  href="../Login/login.html">
+              Log Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- ------------------------------NAVBAR---------------------- --->
+
+    
+      <div style="background-color: var(--gray)" class="container p-5 rounded">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="container">
+            <div class="selecting mt-5 ">
+              <h1>Please Select the Arnis Rules to follow:</h1>
+            </div>
+          </div>
+          <img
+            class="sscarnis img-fluid d-none d-md-block"
+            src="img/sscarnis.png"
+            alt=""
+          />
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <a href="../Tournament/pekaf.html"> 
+                <div class="card popup-button text-white bg-white py-3 shadow-lg">
+                  <div class="card-body text-center">
+                    <img style="width: 285px;" src="img/arnisduel.jpg" alt="" class="mb-5" />
+                    <h3 class="text-dark fw-bolder mb-3 mt-3">PEKAF(Philippine Eskrima Kali Arnis Federation)</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div> 
+        
+            <div class="col-md-5">
+              <a href="../Tournament/ArPhi.html"> 
+                <div class="card popup-button text-white bg-white py-3 shadow-lg">
+                  <div class="card-body text-center">
+                    <img src="img/astigarnis.jpg" alt="" class="mb-4" />
+                    <h3 class="text-dark fw-bolder mb-3 mt-2">ArPhi(Arnis Philippines)</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+                
+
+        <section id="instructors" class="p-5">
+          <div class="container-fluid p-3 text-center bg-body-tertiary fixed-bottom">
+            © Copyright Baston 2023
+          </div>
+          </section>
+
+        </body>
+</html>
+
+
+      
+      <!-- <div class="me-auto p-2">
+        <button
+          style="background-color: var(--red)"
+          class="btn text-light fw-bolder p-3 h3"
+        >
+          SET A TOURNAMENT
+        </button>
+      </div>
+    </div>
+  </body>
+  

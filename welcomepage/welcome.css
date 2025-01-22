@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Fredoka+One&family=Poppins:wght@400;700&family=Raleway:wght@300;900&display=swap");
+
+:root {
+  --blue: #023047;
+  --red: #c50909;
+  --gray: #d9d9d9;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+}
+
+body {
+  height: 100%;
+}
+
+.bastonlogo {
+  width:auto;
+  height: 80px;
+}
+
+.cover {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-image: url(./img/background.png);
+}
+
+.bastonH1 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.aboutUs {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.aboutUs2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: white;
+}
+
+.aboutUs3 {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: white;
+}
+
+body {
+  background-image: url("img/loginbg20new.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

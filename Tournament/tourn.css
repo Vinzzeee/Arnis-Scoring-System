@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Fredoka+One&family=Poppins:wght@400;700&family=Raleway:wght@300;900&display=swap");
+
+:root {
+  --blue: #023047;
+  --red: #c50909;
+  --gray: #d9d9d9;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body::before {
+  display: block;
+  content: "";
+  height: 50px;
+}
+
+.bastonlogo {
+  width: 150px;
+}
+
+body {
+  background-image: url("img/loginbg20new.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.container {
+  flex-grow: 1; 
+  padding: 15px; 
+}
+
+
+.sscarnis {
+
+  width: 150px;
+  height: auto;
+}
+
+/* Add this CSS to set a fixed height for the cards */
+.card {
+  height: 100%; /* Set the desired fixed height for both cards */
+}
+
+/* Add your other button styles here */
+.popup-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.popup-button:hover {
+  transform: scale(1.1); /* Increase the size on hover (adjust the scale factor as needed) */
+}
+
